@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello world</title>
+    <link rel="stylesheet" href="css/app.index.default.css">
+    <link rel="stylesheet" href="css/app.index.component.css">
+    <!--<link rel="stylesheet" href="css/default.css">-->
+    <!--<link rel="stylesheet" href="css/component.css">-->
+
+</head>
+
+
+<body class="cbp-spmenu-push"  >
+
+<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+    <h3>一级菜单</h3>
+    <a id="test">点击打开二级菜单</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Dulse daikon</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Zucchini garlic</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Catsear azuki bean</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Dandelion bunya</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Rutabaga</a>
+
+    <div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="open-right-settings-panel">
+    <h3>二级菜单</h3>
+    <a href="http://www.htmleaf.com/" target="_blank">Celery seakale</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Dulse daikon</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Zucchini garlic</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Catsear azuki bean</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Dandelion bunya</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Rutabaga</a>
+</div>
+
+</div>
+
+<!--<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+    <h3>一级菜单</h3>
+    <a href="http://www.htmleaf.com/" target="_blank">Celery seakale</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Dulse daikon</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Zucchini garlic</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Catsear azuki bean</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Dandelion bunya</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Rutabaga</a>
+</nav>-->
+
+<!--<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right-second" id="cbp-spmenu-s3">
+    <h3>Menu</h3>
+    <a href="http://www.htmleaf.com/" target="_blank">Celery seakale</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Dulse daikon</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Zucchini garlic</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Catsear azuki bean</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Dandelion bunya</a>
+    <a href="http://www.htmleaf.com/" target="_blank">Rutabaga</a>
+</nav>-->
+
+<div class="container">
+    <header class="clearfix ">
+        <h1>Slide and Push Menus</h1>
+    </header>
+
+    <div class="main">
+        <section>
+            <h2>Slide Menus</h2>
+            <button id="showRight" class="cbp-spmenu-push">Show/Hide Right Slide Menu</button>
+        </section>
+
+    </div>
+
+
+    <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+    <script src="js/classie.js"></script>
+
+    <script>
+
+        var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+            showRight = document.getElementById( 'showRight' ),
+            showRightPanel = document.getElementById( 'test' ),
+            panel = document.getElementById( 'open-right-settings-panel' ),
+            panelbody = menuRight,
+            body = document.getElementById( 'showRight' );
+            //body = document.body;
+
+        showRight.onclick = function() {
+            classie.toggle( this, 'active' );
+            classie.toggle( body, 'cbp-spmenu-push-toleft' );
+            classie.toggle( menuRight, 'cbp-spmenu-open' );
+            if(classie.has(menuRight, 'cbp-spmenu-open')){
+                console.log("true");
+            }else {
+                console.log("false");
+            }
+            disableOther( 'showRight' );
+        };
+
+        function disableOther( button ) {
+            if( button !== 'showRight' ) {
+                classie.toggle( showRight, 'disabled' );
+            }
+        }
+
+
+
+        showRightPanel.onclick = function () {
+            //console.log("sssssssss");
+            classie.toggle( this, 'active' );
+            classie.toggle( panelbody, 'cbp-spmenu-push-panle' );
+            classie.toggle( panel, 'cbp-spmenu-open' );
+            classie.toggle( showRightPanel, 'disabled' );
+        }
+
+    </script>
+
+    <script>
+
+    </script>
+
+</div>
+
+</body>
+</html>
